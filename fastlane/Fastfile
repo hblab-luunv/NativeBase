@@ -1,0 +1,14 @@
+platform :android do
+  desc 'Build the Android application.'
+  lane :build do |options|
+    gradle(task: 'clean', project_dir: 'android/')
+    gradle(task: 'assemble', build_type: 'Release', project_dir: 'android/')
+    deploygate(
+      api_token: "29c53ee500eaa1995cf90785176964d781054fb3",
+      user: "testhblab",
+      apk: "./android/app/build/outputs/apk/release/app-release.apk",
+      message: "Build #{options[:date]} #{options[:time]}",
+    )
+  end
+end
+
