@@ -4,10 +4,12 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   pull_request:
     branches: [develop]
+    types: [closed]
 
 jobs:
   # First Job
   install:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,6 +28,22 @@ jobs:
       - name: Check eslint
         run: |
           npm run lint
+  # sonarQube Trigger
+  scan-sonar:
+    name: SonarQube Trigger
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Setup sonarqube
+      uses: warchant/setup-sonar-scanner@v3
+    - name: run sonarqube
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: sonar-scanner
+           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+           -Dsonar.host.url=https://sonar.dev.hblab.vn/
+           -Dsonar.projectKey=Keihiseisan_Mobile
   # Android Job
   build-android:
     needs: eslint
@@ -46,4 +64,3 @@ jobs:
       - name: Build Apk
         run: |
           fastlane android build
-
