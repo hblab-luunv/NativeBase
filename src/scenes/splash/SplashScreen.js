@@ -5,7 +5,7 @@ const SplashScreen = () => {
   return (
     <SafeAreaView>
       <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Text>Splash screen</Text>
+        <Text>Splash screen </Text>
       </ScrollView>
     </SafeAreaView>
   );
