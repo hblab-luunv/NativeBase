@@ -4,9 +4,9 @@ const type = {};
 
 const size = {
   big: scaleFont(22),
-  regular: scaleFont(18),
-  medium: scaleFont(16),
-  small: scaleFont(14),
+  regular: scaleFont(16),
+  medium: scaleFont(14),
+  small: scaleFont(12),
   tiny: scaleFont(10),
 };
 
