@@ -12,8 +12,8 @@ const metrics = {
   tabBarHeight: 56,
   smallMargin: scaleSize(8),
   baseMargin: scaleSize(16),
-  smallRadius: scaleSize(4),
-  baseRadius: scaleSize(8),
+  smallRadius: scaleSize(3),
+  baseRadius: scaleSize(6),
 };
 
 export default metrics;
