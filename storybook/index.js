@@ -2,10 +2,11 @@ import {AppRegistry} from 'react-native';
 import {getStorybookUI, configure} from '@storybook/react-native';
 import atomStories from '../src/components/atoms/atoms.stories';
 import './rn-addons';
+import moleculesStories from '../src/components/molecules/molecules.stories'
 
 // import stories
 configure(() => {
-  [atomStories];
+  [atomStories,moleculesStories];
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
