@@ -5,14 +5,14 @@ const {width: SCREEN_WIDTH, height: SCREEN_HEIGHT} = Dimensions.get('window');
 const widthScale = SCREEN_WIDTH / 375;
 const heightScale = SCREEN_HEIGHT / 812;
 
-export const scaleSize = size => size * widthScale;
+export const scaleSize = (size: number) => size * widthScale;
 
-export const scaleHeightSize = size => size * heightScale;
+export const scaleHeightSize = (size: number) => size * heightScale;
 
-export const scaleFont = size => size * PixelRatio.getFontScale();
+export const scaleFont = (size: number) => size * PixelRatio.getFontScale();
 
 export const boxShadow = (
-  color,
+  color: any,
   offset = {height: 2, width: 2},
   radius = 8,
   opacity = 0.2,
@@ -26,7 +26,7 @@ export const boxShadow = (
   };
 };
 
-export const convertHexToRGBA = (hexCode, opacity) => {
+export const convertHexToRGBA = (hexCode: string, opacity: number) => {
   let hex = hexCode.replace('#', '');
 
   if (hex.length === 3) {

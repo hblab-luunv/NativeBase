@@ -1,7 +1,7 @@
 export default {
   // common
   common: {
-    ok: "OK"
+    ok: 'OK',
   },
   // message
   message: {
@@ -10,6 +10,6 @@ export default {
   },
   // screen
   loginScreen: {
-    title: "Login Screen"
-  }
+    title: 'Login Screen',
+  },
 };

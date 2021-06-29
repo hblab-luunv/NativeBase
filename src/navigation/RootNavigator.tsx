@@ -5,15 +5,13 @@ import {createStackNavigator} from '@react-navigation/stack';
 import BottomTabNavigator from './BottomTabNavigator';
 import AuthNavigator from './AuthNavigator';
 import SplashScreen from '../scenes/splash';
-import { navigationRef } from '../services/navigationService';
-
+import {navigationRef} from '../services/navigationService';
 
 const Stack = createStackNavigator();
 
 const RootNavigator = () => {
   return (
-    <NavigationContainer
-      ref={navigationRef}>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator
         screenOptions={{
           headerShown: false,

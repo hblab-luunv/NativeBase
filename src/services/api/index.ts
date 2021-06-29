@@ -22,8 +22,8 @@ const create = () => {
     console.log(
       '%c Starting Request ',
       'background: #FFA813; color: #fff',
-      request
-    )    
+      request,
+    );
     if (authToken) {
       request.headers.common.Authorization = `Bearer ${authToken}`;
     }
@@ -32,7 +32,7 @@ const create = () => {
 
   api.interceptors.response.use(
     response => {
-      console.log('%c Response ', 'background: #69CA6D; color: #fff', response)
+      console.log('%c Response ', 'background: #69CA6D; color: #fff', response);
       const status = _.get(response, 'data.status', 200);
       if (status === 200) {
         return response;
@@ -41,7 +41,7 @@ const create = () => {
     },
     error => {
       const response = _.get(error, 'response');
-      console.log('%c Response ', 'background: #E41F00; color: #fff', response)
+      console.log('%c Response ', 'background: #E41F00; color: #fff', response);
       const message = _.get(error, 'message');
       if (!response) {
         // network error
@@ -65,9 +65,9 @@ const create = () => {
       return Promise.reject(response);
     },
   );
-}
+};
 
 export default {
   create,
   setAuthToken,
-}
+};

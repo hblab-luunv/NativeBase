@@ -1,10 +1,8 @@
-import { number } from 'prop-types';
-import React, { memo } from 'react';
-import { FunctionComponent } from 'react';
-import { StyleProp, StyleSheet, TextStyle, ViewStyle } from 'react-native';
-import { Text, View } from 'react-native';
-import { colors, fonts, metrics } from '../../themes';
-import { scaleSize } from '../../themes/mixins';
+import React, {memo} from 'react';
+import {StyleProp, StyleSheet, TextStyle, ViewStyle} from 'react-native';
+import {Text, View} from 'react-native';
+import {colors} from '../../themes';
+import {scaleSize} from '../../themes/mixins';
 
 interface BadgeProps {
   number: number;
@@ -12,16 +10,18 @@ interface BadgeProps {
   textStyle?: StyleProp<TextStyle>;
 }
 
-const Badge: React.FC<BadgeProps> = ({
-  badgeStyle,
-  textStyle,
-  number,
-  ...props
-}) => {
-  if(number === 0) return null
+const Badge: React.FC<BadgeProps> = ({badgeStyle, textStyle, number}) => {
+  if (number === 0) {
+    return null;
+  }
   return (
     <View style={StyleSheet.flatten([styles.badge, badgeStyle])}>
-      <Text style={StyleSheet.flatten([styles.label, number > 9 ? styles.twoNumber : styles.oneNumber, textStyle])}>
+      <Text
+        style={StyleSheet.flatten([
+          styles.label,
+          number > 9 ? styles.twoNumber : styles.oneNumber,
+          textStyle,
+        ])}>
         {number > 99 ? 99 : number}
       </Text>
     </View>
@@ -33,18 +33,18 @@ const styles = StyleSheet.create({
     width: scaleSize(24),
     height: scaleSize(24),
     alignSelf: 'flex-start',
-    borderRadius: scaleSize(24)/2,
+    borderRadius: scaleSize(24) / 2,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.danger,
   },
-  oneNumber:{
+  oneNumber: {
     fontSize: 14,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
-  twoNumber:{
+  twoNumber: {
     fontSize: 12,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   label: {
     color: colors.whiteText,
