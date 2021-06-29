@@ -2,7 +2,7 @@
 import {put, call} from 'redux-saga/effects';
 import AuthActions from '../stores/authRedux';
 import api from '../services/api';
-import { AnyAction } from 'redux';
+import {AnyAction} from 'redux';
 
 export function* login(action: AnyAction) {
   const {userName, password, onSuccess, onError} = action;

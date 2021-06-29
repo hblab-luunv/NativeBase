@@ -42,9 +42,7 @@ const BottomTab = () => {
         component={HomeStack}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({}) => (
-            <Icon source={images.icUser} />
-          ),
+          tabBarIcon: ({}) => <Icon source={images.icUser} />,
         }}
       />
       <Tab.Screen
@@ -52,9 +50,7 @@ const BottomTab = () => {
         component={MyPageStack}
         options={{
           tabBarLabel: 'MyPage',
-          tabBarIcon: ({}) => (
-            <Icon source={images.icUser} />
-          ),
+          tabBarIcon: ({}) => <Icon source={images.icUser} />,
         }}
       />
     </Tab.Navigator>

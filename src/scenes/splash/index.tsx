@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, FunctionComponent} from 'react';
 import {View} from 'react-native';
 import {useSelector} from 'react-redux';
@@ -10,7 +11,10 @@ const SplashScreen: FunctionComponent = () => {
   useEffect(() => {
     if (!userToken) {
       api.setAuthToken(userToken);
-      setTimeout(() => navigationService.navigateAndReset('BottomTabStack'), 1000);
+      setTimeout(
+        () => navigationService.navigateAndReset('BottomTabStack'),
+        1000,
+      );
     } else {
       setTimeout(() => navigationService.navigateAndReset('AuthStack'), 1000);
     }

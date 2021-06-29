@@ -1,6 +1,6 @@
 import {createReducer, createActions} from 'reduxsauce';
 import Immutable from 'seamless-immutable';
-import { AnyAction } from 'redux';
+import {AnyAction} from 'redux';
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -25,6 +25,7 @@ export const AuthSelectors = {};
 
 /* ------------- Reducers ------------- */
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const login = (state: any, action: AnyAction) => {
   return state;
 };
