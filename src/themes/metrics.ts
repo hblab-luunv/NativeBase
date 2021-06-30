@@ -21,6 +21,8 @@ const metrics = {
     s2: scaleSize(2),
     s5: scaleSize(5),
     s10: scaleSize(10),
+    s16: scaleSize(16),
+    s20: scaleSize(20),
   },
 };
 

@@ -35,6 +35,7 @@ const BadgeWithIcon: React.FC<BadgeWithIconProps> = ({
           {width: size / 2, height: size / 2, borderRadius: size / 4},
           badgeStyle,
         ])}
+        textStyle={{fontSize: size / 3}}
       />
     </View>
   );

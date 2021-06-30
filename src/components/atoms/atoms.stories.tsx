@@ -18,7 +18,8 @@ stories.add('Icon', () => (
 
 stories.add('Badge', () => (
   <View>
-    <Badge number={2} badgeStyle={baseStyle} />
+    <Badge badgeStyle={baseStyle} />
+    <Badge number={10} badgeStyle={baseStyle} />
     <Badge number={10} badgeStyle={baseStyle} />
   </View>
 ));

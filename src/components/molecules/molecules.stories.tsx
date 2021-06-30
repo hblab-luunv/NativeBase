@@ -4,15 +4,16 @@ import {View} from 'react-native';
 import {storiesOf} from '@storybook/react-native';
 import {images} from '../../themes';
 import BadgeWithIcon from './BadgeWithIcon';
+import Header from './Header';
 
 const stories = storiesOf('Molecules', module);
 
-const baseIconStyle = {marginTop: 10, marginLeft: 10, marginRight: 10};
+const baseIconStyle = {marginTop: 10};
 stories.add('BadgeIcon', () => (
   <View>
     <BadgeWithIcon
       containerStyle={baseIconStyle}
-      number={10}
+      number={1}
       icon={images.icUser}
       size={30}
     />
@@ -34,5 +35,11 @@ stories.add('BadgeIcon', () => (
       icon={images.icUser}
       size={90}
     />
+  </View>
+));
+
+stories.add('Header', () => (
+  <View>
+    <Header numberNotify={10} />
   </View>
 ));
